@@ -1,14 +1,11 @@
-# syntax=docker/dockerfile:1
+FROM node:20-alpine
 
-FROM node:19-bullseye
-ENV NODE_ENV=production
+RUN apk add --no-cache git
 
-WORKDIR /app
+RUN git clone https://github.com/dmapguy/math-guide.git
 
-COPY ["package.json", "package-lock.json*", "./"]
+WORKDIR /math-guide
 
 RUN npm install
 
-COPY . .
-
-CMD [ "node", "index.js" ]
+CMD npm start
