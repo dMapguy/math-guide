@@ -2,7 +2,7 @@ FROM node:20-alpine
 
 RUN apk add --no-cache git
 
-RUN git clone https://github.com/dmapguy/math-guide.git
+RUN git clone https://github.com/dMapguy/math-guide.git
 
 WORKDIR /math-guide
 
